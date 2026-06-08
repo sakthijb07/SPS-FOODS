@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPS FOODS – Premium Frozen Snacks & Fresh Seafood, Pondicherry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --crimson: #C0152A;
+    --crimson-dark: #8B0D1D;
+    --crimson-light: #FDEAEC;
+    --ocean: #0B4D7A;
+    --ocean-dark: #073557;
+    --ocean-light: #E6F1FB;
+    --gold: #D4840A;
+    --off-white: #F9F6F1;
+    --surface: #FFFFFF;
+    --text-dark: #1A1210;
+    --text-mid: #4A3F3A;
+    --text-muted: #8A7A74;
+    --border: rgba(26,18,16,0.1);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--off-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(249,246,241,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--crimson);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--ocean); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--crimson); }
+  .nav-cta {
+    background: var(--crimson);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--crimson-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding: 68px 5vw 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 4rem 5rem 0;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--crimson-light);
+    color: var(--crimson);
+    border: 1px solid rgba(192,21,42,0.2);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: var(--crimson);
+    border-radius: 50%;
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.6rem, 4.5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--crimson);
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--text-mid);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-sub strong { color: var(--ocean); font-weight: 600; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--crimson);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(192,21,42,0.35);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--crimson-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,21,42,0.45); }
+  .btn-secondary {
+    background: var(--ocean);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(11,77,122,0.3);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-secondary:hover { background: var(--ocean-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(11,77,122,0.4); }
+  .btn-outline {
+    background: transparent;
+    color: var(--crimson);
+    border: 2px solid var(--crimson);
+    padding: 13px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { background: var(--crimson); color: #fff; }
+
+  .hero-stats {
+    display: flex; gap: 2rem; margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat-item .stat-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .stat-item .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 3px;
+  }
+
+  /* Hero Visual Panel */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .hero-panel {
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-panel-top {
+    background: linear-gradient(135deg, #2B0A0A 0%, #6B1A1A 100%);
+  }
+  .hero-panel-bottom {
+    background: linear-gradient(135deg, #041C2E 0%, #0B4D7A 100%);
+  }
+  .panel-food-art {
+    font-size: 8rem;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+    animation: float 4s ease-in-out infinite;
+    user-select: none;
+  }
+  .panel-food-art-2 {
+    animation-delay: -2s;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-14px) rotate(3deg); }
+  }
+  .panel-label {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    color: #fff;
+  }
+  .panel-label-title { font-weight: 700; font-size: 0.95rem; }
+  .panel-label-sub { font-size: 0.75rem; opacity: 0.75; margin-top: 2px; }
+  .panel-tag {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--gold);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .panel-divider {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 3px;
+    background: var(--off-white);
+    z-index: 5;
+    transform: translateY(50%) rotate(0deg);
+  }
+  .food-floating {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .ff1 { top: 15%; left: 10%; animation: float 5s ease-in-out infinite; }
+  .ff2 { bottom: 20%; right: 15%; animation: float 6s ease-in-out infinite; animation-delay: -3s; }
+
+  /* ── SECTIONS SHARED ── */
+  section { padding: 6rem 5vw; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .tag-red { color: var(--crimson); }
+  .tag-blue { color: var(--ocean); }
+  .section-tag::before {
+    content: '';
+    width: 24px; height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    max-width: 640px;
+    margin-bottom: 1rem;
+  }
+  .section-h2 em { font-style: italic; color: var(--crimson); }
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 580px;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+  }
+  .section-desc strong { color: var(--ocean); font-weight: 600; }
+
+  /* ── CRISPY CORNER (Frozen Foods) ── */
+  .crispy-bg {
+    background: #FFF9F5;
+    position: relative; overflow: hidden;
+  }
+  .crispy-bg::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(192,21,42,0.05) 0%, transparent 50%),
+                      radial-gradient(circle at 10% 80%, rgba(212,132,10,0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .product-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(26,18,16,0.07);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,18,16,0.13); }
+  .card-visual {
+    height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-visual-red { background: linear-gradient(135deg, #3D0B0B, #7A1515); }
+  .card-visual-amber { background: linear-gradient(135deg, #2D1700, #6B3500); }
+  .card-visual-orange { background: linear-gradient(135deg, #2A1000, #7A3500); }
+  .card-visual-dark { background: linear-gradient(135deg, #1A1A1A, #3D2B00); }
+  .card-food-emoji {
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+    animation: float 5s ease-in-out infinite;
+    z-index: 2; position: relative;
+  }
+  .best-seller-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--gold);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    z-index: 5;
+    box-shadow: 0 3px 10px rgba(212,132,10,0.5);
+  }
+  .new-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--crimson);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    z-index: 5;
+  }
+  .card-body { padding: 1.25rem; }
+  .card-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .card-desc {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 8px;
+  }
+  .card-price {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .card-price span { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; font-family: var(--font-body); }
+  .btn-add-cart {
+    background: var(--crimson);
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 50px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .btn-add-cart:hover { background: var(--crimson-dark); transform: scale(1.03); }
+
+  /* ── FRESH CATCH (Seafood) ── */
+  .seafood-bg {
+    background: #F0F7FF;
+    position: relative; overflow: hidden;
+  }
+  .seafood-bg::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 90% 50%, rgba(11,77,122,0.06) 0%, transparent 50%),
+                      radial-gradient(circle at 5% 30%, rgba(11,77,122,0.04) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .seafood-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .seafood-left {}
+  .seafood-h2 { color: var(--ocean-dark); }
+  .seafood-h2 em { color: var(--ocean); }
+  .wholesale-banner {
+    background: var(--ocean);
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    margin-top: 2rem;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .wholesale-icon { font-size: 2rem; }
+  .wholesale-text strong { display: block; font-weight: 700; font-size: 0.95rem; }
+  .wholesale-text span { font-size: 0.83rem; opacity: 0.8; }
+  .seafood-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .seafood-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(11,77,122,0.1);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .seafood-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(11,77,122,0.15); }
+  .seafood-visual {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem;
+    position: relative;
+  }
+  .sv-deep { background: linear-gradient(135deg, #031728, #0B4D7A); }
+  .sv-mid { background: linear-gradient(135deg, #041020, #093D5E); }
+  .seafood-tag {
+    position: absolute; top: 10px; left: 10px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .seafood-card-body { padding: 1rem 1.2rem; }
+  .seafood-card-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ocean-dark);
+    margin-bottom: 4px;
+  }
+  .seafood-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .btn-inquire {
+    width: 100%;
+    background: var(--ocean);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-inquire:hover { background: var(--ocean-dark); transform: scale(1.02); }
+
+  /* ── WHY CHOOSE ── */
+  .why-section { background: var(--surface); }
+  .why-header { text-align: center; margin-bottom: 4rem; }
+  .why-header .section-tag { justify-content: center; }
+  .why-header .section-h2 { margin: 0 auto 1rem; text-align: center; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .why-card {
+    background: var(--off-white);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .why-card.red::before { background: var(--crimson); }
+  .why-card.blue::before { background: var(--ocean); }
+  .why-card.gold::before { background: var(--gold); }
+  .why-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(26,18,16,0.1); }
+  .why-icon {
+    width: 64px; height: 64px;
+    border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+  }
+  .icon-red { background: var(--crimson-light); }
+  .icon-blue { background: var(--ocean-light); }
+  .icon-gold { background: #FFF3DE; }
+  .why-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+  .why-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--crimson-dark) 0%, #8B0D1D 50%, #3D0420 100%);
+    padding: 5rem 5vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 75% 50%, rgba(212,132,10,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+  }
+  .cta-inner {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between; gap: 3rem;
+  }
+  .cta-text h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .cta-text h2 em { font-style: italic; color: #FFD070; }
+  .cta-text p { color: rgba(255,255,255,0.75); font-size: 1rem; }
+  .cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+  .btn-white {
+    background: #fff;
+    color: var(--crimson);
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+  .btn-ghost-white {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.4);
+    padding: 13px 26px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-ghost-white:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.7); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0F0806;
+    color: rgba(255,255,255,0.7);
+    padding: 4rem 5vw 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 2rem;
+  }
+  .footer-brand .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .footer-brand .brand-name span { color: #5DCAA5; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.65; max-width: 280px; }
+  .footer-brand .brand-tag {
+    display: inline-block;
+    margin-top: 1.25rem;
+    background: rgba(192,21,42,0.15);
+    border: 1px solid rgba(192,21,42,0.3);
+    color: #F09595;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .footer-col h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1.25rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.65rem; }
+  .footer-col ul a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: #fff; }
+  .footer-contact .contact-item {
+    display: flex; gap: 10px;
+    margin-bottom: 0.85rem;
+    align-items: flex-start;
+  }
+  .contact-icon { font-size: 1rem; color: var(--gold); margin-top: 1px; flex-shrink: 0; }
+  .contact-text { font-size: 0.85rem; line-height: 1.5; }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    background: #25D366;
+    color: #fff;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.55); }
+  .wa-tooltip {
+    position: fixed; bottom: 38px; right: 100px; z-index: 199;
+    background: #fff;
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.83rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    white-space: nowrap;
+    animation: fadeIn 0.3s ease;
+    pointer-events: none;
+  }
+  .wa-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -8px; top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: #fff;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(6px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 350px; }
+    .hero-left { padding: 3rem 0; }
+    .seafood-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .cta-inner { flex-direction: column; }
+    .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .seafood-grid { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+  }
+
+  /* ── TRIM ── */
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--crimson), var(--ocean), transparent);
+    margin: 0;
+    opacity: 0.3;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SPS <span>FOODS</span></div>
+  <ul class="nav-links">
+    <li><a href="#frozen">Frozen Menu</a></li>
+    <li><a href="#seafood">Seafood Wholesale</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+  <a onclick="window.open('https://wa.me/919442396585','_blank')" href="#" class="nav-cta">📞 Call to Order</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left reveal">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Pondicherry's #1 Frozen & Fresh Seafood
+    </div>
+    <h1>From <em>Deep Sea</em> to Crispy Crunch –<br>Delivered to Your Door!</h1>
+    <p class="hero-sub"><strong>SPS FOODS</strong> | Premium Frozen Party Snacks &amp; Fresh Wholesale Seafood in Pondicherry. Serving homes, restaurants &amp; shops with the finest quality.</p>
+    <div class="hero-btns">
+      <a href="#frozen" class="btn-primary">🛒 Order for Home Delivery</a>
+      <a href="#seafood" class="btn-secondary">🐟 Wholesale / Shop Inquiries</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Signature Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Daily</div>
+        <div class="stat-label">Fresh Catch Delivery</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-panel hero-panel-top">
+      <span class="food-floating ff1">🍗</span>
+      <div class="panel-food-art" aria-hidden="true">🍗</div>
+      <span class="food-floating ff2">🌶️</span>
+      <div class="panel-tag">🔥 HOT & CRISPY</div>
+      <div class="panel-label">
+        <div class="panel-label-title">Frozen Party Snacks</div>
+        <div class="panel-label-sub">Chicken Popcorn • Drumsticks • Lollipops</div>
+      </div>
+    </div>
+    <div class="hero-panel hero-panel-bottom">
+      <span class="food-floating ff1" style="animation-delay:-1s;">🐠</span>
+      <div class="panel-food-art panel-food-art-2" aria-hidden="true">🦐</div>
+      <span class="food-floating ff2" style="animation-delay:-4s;">❄️</span>
+      <div class="panel-tag" style="background: var(--ocean);">🧊 ICE FRESH</div>
+      <div class="panel-label">
+        <div class="panel-label-title">Fresh Seafood Wholesale</div>
+        <div class="panel-label-sub">Vanjaram • Prawns • Wholesale Rates</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 1: CRISPY CORNER -->
+<section class="crispy-bg" id="frozen">
+  <div class="section-tag tag-red reveal">🔥 The Crispy Corner</div>
+  <h2 class="section-h2 reveal reveal-delay-1">Craving Something <em>Crispy?</em><br>Grab Our Frozen Favorites</h2>
+  <p class="section-desc reveal reveal-delay-2">Golden, crunchy and packed with flavour — our frozen snack range is the ultimate party or evening treat, ready to cook in minutes.</p>
+
+  <div class="products-grid">
+    <div class="product-card reveal reveal-delay-1">
+      <div class="card-visual card-visual-red">
+        <span class="card-food-emoji" aria-hidden="true">🍗</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Signature Fried Chicken</div>
+        <div class="card-desc">Our hero product — crispy golden coating, juicy &amp; tender inside. Family-sized packs available.</div>
+        <div class="card-footer">
+          <div class="card-price">Market Price <span>/ pack</span></div>
+          <button class="btn-add-cart" onclick="window.open('https://wa.me/919442396585?text=Hi!%20I%20want%20to%20order%20Signature%20Fried%20Chicken%20from%20SPS%20Foods','_blank')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal reveal-delay-2">
+      <div class="card-visual card-visual-amber">
+        <span class="best-seller-badge">⭐ Best Seller</span>
+        <span class="card-food-emoji" aria-hidden="true">🦀</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Crab Lollipop</div>
+        <div class="card-desc">Our crown jewel. Juicy crab meat on a stick, fried to a perfect crunch. Goes fast — order early!</div>
+        <div class="card-footer">
+          <div class="card-price">Market Price <span>/ pack</span></div>
+          <button class="btn-add-cart" onclick="window.open('https://wa.me/919442396585?text=Hi!%20I%20want%20to%20order%20Crab%20Lollipop%20from%20SPS%20Foods','_blank')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal reveal-delay-3">
+      <div class="card-visual card-visual-orange">
+        <span class="card-food-emoji" aria-hidden="true">🍿</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Chicken Popcorn</div>
+        <div class="card-desc">Bite-sized crispy bites perfect for parties, movie nights or evening snacks with the family.</div>
+        <div class="card-footer">
+          <div class="card-price">Market Price <span>/ pack</span></div>
+          <button class="btn-add-cart" onclick="window.open('https://wa.me/919442396585?text=Hi!%20I%20want%20to%20order%20Chicken%20Popcorn%20from%20SPS%20Foods','_blank')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal reveal-delay-4">
+      <div class="card-visual card-visual-dark">
+        <span class="new-badge">🔥 Fan Fav</span>
+        <span class="card-food-emoji" aria-hidden="true">🍖</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Drumsticks & Chicken Legs</div>
+        <div class="card-desc">Crispy drumsticks &amp; plump chicken legs — perfectly marinated and fried. Great for celebrations.</div>
+        <div class="card-footer">
+          <div class="card-price">Market Price <span>/ pack</span></div>
+          <button class="btn-add-cart" onclick="window.open('https://wa.me/919442396585?text=Hi!%20I%20want%20to%20order%20Chicken%20Drumsticks%20from%20SPS%20Foods','_blank')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 2: FRESH CATCH -->
+<section class="seafood-bg" id="seafood">
+  <div class="seafood-layout">
+    <div class="seafood-left">
+      <div class="section-tag tag-blue reveal">🌊 The Fresh Catch</div>
+      <h2 class="section-h2 seafood-h2 reveal reveal-delay-1">Fresh from the <em>Ocean</em>:<br>Wholesale Rates</h2>
+      <p class="section-desc reveal reveal-delay-2">Sourcing for your restaurant, shop, or a grand family feast? Get <strong>premium quality at unbeatable wholesale prices</strong>, delivered straight from Pondicherry's freshest daily catch.</p>
+
+      <div class="wholesale-banner reveal reveal-delay-3">
+        <div class="wholesale-icon">📦</div>
+        <div class="wholesale-text">
+          <strong>Wholesale Rates Available</strong>
+          <span>For Shops, Restaurants &amp; Bulk Orders — call or WhatsApp to discuss pricing</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;" class="reveal reveal-delay-4">
+        <a href="#contact" class="btn-secondary">📞 Get Wholesale Pricing</a>
+      </div>
+    </div>
+
+    <div class="seafood-grid">
+      <div class="seafood-card reveal reveal-delay-1" style="grid-column: 1 / -1;">
+        <div class="seafood-visual sv-deep" style="height: 200px;">
+          <span class="seafood-tag">🏆 Premium Cut</span>
+          <span style="font-size: 7rem; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5)); animation: float 5s ease-in-out infinite;" aria-hidden="true">🐟</span>
+        </div>
+        <div class="seafood-card-body">
+          <div class="seafood-card-name">Premium Vanjaram (Seer Fish)</div>
+          <div class="seafood-card-desc">The king of seafood — available sliced or whole. Sourced daily for peak freshness. Ideal for frying, curries or grilling. Bulk orders welcome.</div>
+          <button class="btn-inquire" onclick="window.open('https://wa.me/919442396585?text=Hi!%20I%20want%20to%20inquire%20about%20Vanjaram%20Seer%20Fish%20from%20SPS%20Foods','_blank')">Inquire for Wholesale Price</button>
+        </div>
+      </div>
+
+      <div class="seafood-card reveal reveal-delay-2" style="grid-column: 1 / -1;">
+        <div class="seafood-visual sv-mid">
+          <span class="seafood-tag">✅ Cleaned & Ready</span>
+          <span style="font-size: 7rem; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5)); animation: float 6s ease-in-out infinite;" aria-hidden="true">🦐</span>
+        </div>
+        <div class="seafood-card-body">
+          <div class="seafood-card-name">Fresh Catch Prawns</div>
+          <div class="seafood-card-desc">Plump, cleaned &amp; ready-to-cook prawns. Available in multiple sizes. Daily fresh stock — perfect for restaurants, tiffin centres &amp; caterers.</div>
+          <button class="btn-inquire" onclick="window.open('https://wa.me/919442396585?text=Hi!%20I%20want%20to%20inquire%20about%20Fresh%20Prawns%20from%20SPS%20Foods','_blank')">Inquire for Wholesale Price</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 3: WHY CHOOSE -->
+<section class="why-section" id="why">
+  <div class="why-header">
+    <div class="section-tag tag-red reveal">✨ Our Promise</div>
+    <h2 class="section-h2 reveal reveal-delay-1">Why Choose <em>SPS Foods?</em></h2>
+    <p class="section-desc reveal reveal-delay-2" style="margin: 0 auto 3rem; text-align: center;">We deliver more than food — we deliver trust, freshness, and value to every home and shop in Pondicherry.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card red reveal reveal-delay-1">
+      <div class="why-icon icon-red" aria-hidden="true">🚚</div>
+      <h3>Home &amp; Shop Delivery</h3>
+      <p>Fast, temperature-controlled delivery across Pondicherry. Your frozen snacks stay crispy-cold and your seafood stays ocean-fresh — from our door to yours.</p>
+    </div>
+    <div class="why-card blue reveal reveal-delay-2">
+      <div class="why-icon icon-blue" aria-hidden="true">🛡️</div>
+      <h3>Premium Quality</h3>
+      <p>Strictly hygienic packaging and freshest catch guarantee. Every product passes our quality check before it leaves our facility on Lake Street, Velrampet.</p>
+    </div>
+    <div class="why-card gold reveal reveal-delay-3">
+      <div class="why-icon icon-gold" aria-hidden="true">🏷️</div>
+      <h3>Unbeatable Prices</h3>
+      <p>Retail convenience at near-wholesale rates. Whether you're ordering for your family or your shop, you'll always get the best value in Pondicherry.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <div class="cta-inner">
+    <div class="cta-text reveal">
+      <h2>Ready to Order?<br><em>We Deliver Across Pondicherry.</em></h2>
+      <p>Call, WhatsApp, or visit us at Lake Street, Velrampet. Fast delivery for homes &amp; shops.</p>
+    </div>
+    <div class="cta-btns reveal reveal-delay-2">
+      <a onclick="window.open('https://wa.me/919442396585?text=Hi%20SPS%20Foods!%20I%27d%20like%20to%20place%20an%20order.','_blank')" href="#" class="btn-white">💬 Order via WhatsApp</a>
+      <a onclick="window.open('https://wa.me/919442396585','_blank')" href="#" class="btn-ghost-white">📞 Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">SPS <span>FOODS</span></div>
+      <p>Pondicherry's trusted source for premium frozen party snacks and fresh wholesale seafood. Delivering quality, freshness, and taste since day one.</p>
+      <div class="brand-tag">🔴 Velrampet, Pondicherry</div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#frozen">Frozen Menu</a></li>
+        <li><a href="#seafood">Seafood Wholesale</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#frozen">Signature Fried Chicken</a></li>
+        <li><a href="#frozen">Crab Lollipop</a></li>
+        <li><a href="#frozen">Chicken Popcorn</a></li>
+        <li><a href="#frozen">Chicken Drumsticks</a></li>
+        <li><a href="#seafood">Vanjaram (Seer Fish)</a></li>
+        <li><a href="#seafood">Fresh Prawns</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <h4>Find Us</h4>
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <span class="contact-text">No: 82, Lake Street, Velrampet,<br>Pondicherry – 605004</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">💬</span>
+        <span class="contact-text">WhatsApp us to order instantly</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">⏰</span>
+        <span class="contact-text">Open Daily<br>Morning till Evening</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 SPS Foods, Pondicherry. All rights reserved.</span>
+    <span>Made with ❤️ in Pondicherry</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<div class="wa-tooltip" id="wa-tip">Order via WhatsApp</div>
+<a onclick="window.open('https://wa.me/919442396585?text=Hi%20SPS%20Foods!%20I%27d%20like%20to%20place%20an%20order.','_blank')" href="#" class="wa-float" aria-label="Order via WhatsApp" id="wa-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // WA tooltip auto-hide
+  setTimeout(() => {
+    const tip = document.getElementById('wa-tip');
+    if (tip) tip.style.display = 'none';
+  }, 4000);
+</script>
+</body>
+</html>
